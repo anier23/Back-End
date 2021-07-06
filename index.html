@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <meta charset="utf-8">
+</head>
+<body>
+<form name="Datos" method="POST" data-netlify="true" onsubmit="return validacion()">
+  <p>Nombre: <input type="text" name="nombre" size="40"></p>
+  <p>Año de nacimiento: <input type="number" name="nacido" min="1900"></p>
+  <p>Estatura:<input type="text" id="est">
+  <p>Sexo:
+    <input type="radio" name="hm" value="h"> Hombre
+    <input type="radio" name="hm" value="m"> Mujer
+  </p>
+  <p>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Borrar">
+  </p>
+</form>
+<script type="text/javascript">
+function validacion() {
+valor = document.getElementById("est").value;
+if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
+
+   alert("EL campo estatura no debe estar vacio");
+   return false;
+}
+valor = document.getElementById("est").value;
+
+if( isNaN(valor) ) {
+  alert("EL campo estatura no debe contener letras");
+  return false;
+}
+}
+//https://uniwebsidad.com/libros/javascript/capitulo-7/validacion
+//https://aprenderaprogramar.com/foros/index.php?topic=3455.0
+//https://docs.netlify.com/forms/setup/
+//https://app.netlify.com/start
+</script>
+
+</body>
+</html>
